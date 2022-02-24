@@ -1,0 +1,54 @@
+{% extends "user/index.html" %}
+{% load socialaccount %}
+{% load crispy_forms_tags %}
+{% block start %}
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css">
+
+  <style>
+    .social-login-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      gap: 1rem;
+    }
+
+    @media screen and (max-width: 425px) {
+      .social-login-container {
+        flex-direction: column;
+      }
+    }
+  </style>
+
+ <div class="container" style="max-width: 80vw;">
+  <center>
+    <form method="POST">
+    {% csrf_token %}
+    <fieldset class="form-group mb-3">
+      {{ form|crispy}}
+    </fieldset>
+  <center>
+    <button style="font-size: 1.25rem; padding: 0.5rem 1rem;" class="btn btn-primary" type="submit"><strong>Fazer login</strong></button>
+    <br> <br/>
+    <br> <br/>
+    <p>ou</p>
+    <div class="social-login-container">
+      <a class="btn btn-primary" style="background-color: #3b5998; border: 0;" href="{% provider_login_url 'facebook' %}" role="button">
+        <i class="fa fa-facebook" style="color: white;"></i>
+        <b style="margin-left: 1rem;">Login com Facebook</b>
+      </a>
+      <a class="btn btn-primary" style="background-color: #db4437; border: 0;" href="{% provider_login_url 'google' %}" role="button">
+        <i class="fa fa-google"></i>
+        <b style="margin-left: 1rem;">Login com Google</b>
+      </a>
+    </div>
+  </center>
+  <br> <br/>
+  <center>
+  <sub><a href="{% url 'register' %}" style="text-decoration: none; color: blue; padding:2%; cursor:pointer; margin-right:2%;">Ainda não tem conta no E-Fidelity? Cadastra-se aqui.</a></sub>
+  </form>
+  </center>
+ </div>
+{% endblock start %}

@@ -1,0 +1,22 @@
+{% extends "user/index.html" %}
+{% load crispy_forms_tags %}
+{% block start %}
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<div class="container">
+  <form method="POST">
+    {% csrf_token %}
+    <fieldset class="form-group mb-3">
+      {{ form|crispy}}
+    </fieldset>
+    <center>
+      <button class="btn btn-primary" type="submit"><span class="glyphicon glyphicon-check"></span> &nbsp; Cadastrar</button>
+    </center>
+    <br />
+    <center>
+      <sub><a href="{% url 'login' %}">Já tem uma conta no E-Fidelity? Entrar na minha conta.</a></sub>
+    </center>
+  </form>
+</div>
+{% endblock start %}

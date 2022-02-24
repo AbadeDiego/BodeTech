@@ -1,0 +1,112 @@
+/* Shopkeeper */
+
+.shopkeeper {
+  display: flex;
+  flex-direction: column;
+
+  text-align: center;
+  margin-top: calc(5.25rem - 3.5rem);
+}
+
+.shopkeeper h2 {
+  font-size: 2.25rem;
+  line-height: 3.5rem;
+  color: var(--title);
+}
+
+.shopkeeper h2::after {
+  content: "";
+  display: block;
+
+  width: 56px;
+  height: 2px;
+
+  background-color: var(--title);
+
+  margin: 1.625rem auto 3rem;
+}
+
+.shopkeeper .cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 2rem;
+  margin: 0 auto;
+}
+
+.shopkeeper .cards .card {
+  width: 21.75rem;
+  height: 22.125rem;
+
+  background-color: var(--white);
+  box-shadow: 10px 40px 50px rgba(229, 233, 246, 0.4);
+  border-radius: 20px;
+}
+
+.shopkeeper .cards .card img {
+  border-radius: 20px;
+}
+
+.shopkeeper .cards .card a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: calc(18.5rem - 2px);
+  height: calc(3.75rem - 2px);
+
+  margin: 2.25rem auto 1.625rem auto;
+
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--white);
+  text-decoration: none;
+
+  background-color: var(--primary);
+
+  border: 2px solid var(--primary);
+  border-radius: 16px;
+
+  cursor: pointer;
+  transition: .2s;
+}
+
+.shopkeeper .cards .card a:hover {
+  color: var(--primary);
+  background-color: transparent;
+  border: 2px solid var(--primary);
+}
+
+@media screen and (max-width: 768px) {
+  .shopkeeper .cards {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .shopkeeper h2 {
+    font-size: 1.75rem;
+  }
+
+  .shopkeeper .cards .card,
+  .shopkeeper .cards .card img {
+    width: 20rem;
+  }
+
+  .shopkeeper .cards .card a {
+    width: calc(15.5rem - 2px);
+  }
+}
+
+@media screen and (max-width: 375px)  {
+  .shopkeeper h2 {
+    font-size: 1.25rem;
+    line-height: 2.25rem;
+  }
+
+  .shopkeeper .cards .card,
+  .shopkeeper .cards .card img {
+    width: 16.5rem;
+  }
+}

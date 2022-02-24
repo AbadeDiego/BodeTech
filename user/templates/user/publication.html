@@ -1,0 +1,80 @@
+{% extends "user/index.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block start %}
+
+<main class="ad-wrapper">
+    <header>
+        <h4>Olá, {{ user.last_name }}!</h4>
+        <a href="{% url 'index' %}">
+            <img src="{% static 'images/shopkeeper/icons/arrow-left.svg' %}" alt="Voltar">
+            Retornar
+        </a>
+    </header>
+
+    <form class="input-group" onsubmit="load(event)" autocomplete="off">
+        <textarea type="text" placeholder="Faça uma publicação para seus clientes" id="myInput" ></textarea>
+        <button type="submit">Fazer publicação</button>
+    </form>
+
+    <div class="line"></div>
+
+    <div class="posts"></div>
+
+    <script>
+
+
+        // Start with first post
+        let counter = 1;
+
+        // Load posts 20 at a time
+        const quantity = 1;
+
+        // When DOM loads, render the first 20 posts
+        document.addEventListener('DOMContentLoaded', load);
+
+        // If hide button is clicked, delete the post
+        document.addEventListener('click', event => {
+            const element = event.target;
+            if (element.className === 'button-post') {
+                element.parentElement.remove()
+            }
+        });
+
+        // Load next set of posts
+        function load(event) {
+            event.preventDefault()
+
+            // Selecting the input element and get its value
+            var posts = document.getElementById("myInput").value;
+
+            // Set start and end post numbers, and update counter
+            const start = counter;
+            const end = start + quantity - 1;
+            counter = end + 1;
+
+            // Get new posts and add posts
+            fetch(`/posts?start=${start}&end=${end}`)
+                .then(response => response.json())
+                .then(data => {
+                    data.posts.forEach(add_post);
+            })
+        };
+
+        // Add a new post with given contents to DOM
+        function add_post(contents) {
+
+            // Create new post
+            const post = document.createElement('div');
+            post.className = 'post';
+            post.innerHTML = `<strong>${contents}</strong><button class="button-post">Deletar publicação</button>`;
+
+            // Add post to DOM
+            document.querySelector('.posts').append(post);
+        };
+    </script>
+</main>
+    
+
+
+{% endblock start %}

@@ -1,0 +1,335 @@
+/* E-Fidelity - Cartão Fidelidade Digital */ 
+
+.e-fidelity {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: calc(5.25rem - 3.5rem);
+  padding: 0 8rem;
+}
+
+.e-fidelity .text-area {
+  display: flex;
+  flex-direction: column;
+
+  max-width: 29rem;
+  margin-right: 6.5rem;
+}
+
+.e-fidelity .text-area h1 {
+  font-size: 2.5rem;
+  line-height: 3.5rem;
+  color: var(--title);
+}
+
+.e-fidelity .text-area p {
+  font-size: 1.25rem;
+  line-height: 2rem;
+  color: var(--text);
+
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.e-fidelity .text-area .register-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 200px;
+  height: 56px;
+
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--white);
+  text-decoration: none;
+
+  background-color: var(--primary);
+
+  border: none;
+  border-radius: 55px;
+
+  cursor: pointer;
+  transition: .2s;
+}
+
+.e-fidelity .text-area .register-button:hover {
+  color: var(--primary);
+  background-color: transparent;
+  border: 2px solid var(--primary);
+}
+
+/* Nossos serviços */
+
+.our-services {
+  display: flex;
+  flex-direction: column;
+
+  margin-top: 11.5rem;
+  padding: 0 5rem;
+
+  text-align: center;
+}
+
+.our-services .text-area h2 {
+  font-size: 2.25rem;
+  line-height: 3.5rem;
+  color: var(--title);
+}
+
+.our-services .text-area h2:after {
+  content: '';
+  display: block;
+
+  width: 56px;
+  height: 2px;
+
+  margin: 26px auto 33px;
+
+  border-radius: 5px;
+  background-color: var(--title);
+}
+
+.our-services .text-area p {
+  font-size: 1.125rem;
+  line-height: 1.875rem;
+  color: var(--text);
+}
+
+.our-services .cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  max-width: 100vw;
+  margin-top: 5rem;
+}
+
+.our-services .cards .line-1 {
+  display: flex;
+  align-items: center;
+
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.our-services .cards .line-2 {
+  display: flex;
+  align-items: center;
+
+  gap: 2rem;
+}
+
+.our-services .cards .card {
+  width: 350px;
+  height: 354px;
+
+  text-align: start;
+  padding: 0 2.25rem;
+
+  background-color: var(--white);
+  box-shadow: 10px 40px 50px rgba(229, 233, 246, 0.4);
+  border-radius: 20px;
+}
+
+.our-services .cards .card img {
+  margin-top: 3rem;
+}
+
+.our-services .cards .card h3 {
+  font-size: 1.5rem;
+  line-height: 3.5rem;
+  color: var(--title);
+}
+
+.our-services .cards .card p {
+  font-size: 1rem;
+  line-height: 1.75rem;
+  color: var(--text);
+  max-width: 17rem;
+}
+
+/* Download our mobile apps */
+
+.mobile-app {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 4.5rem;
+
+  margin-top: 14.25rem;
+  padding: 0 8rem;
+}
+
+.mobile-app .text-area {
+  max-width: 30rem;
+}
+
+.mobile-app .text-area h2 {
+  font-size: 36px;
+  line-height: 48px;
+  color: var(--title);
+}
+
+.mobile-app .text-area h2::after {
+  content: '';
+  display: block;
+
+  width: 56px;
+  height: 2px;
+
+  margin: 30px 0;
+
+  border-radius: 10px;
+
+  background-color: var(--title);
+}
+
+.mobile-app .text-area p {
+  font-size: 18px;
+  line-height: 30px;
+  color: var(--text);
+}
+
+/* Testimonials */
+
+
+
+/* Footer */
+
+.footer {
+  padding: 7.5rem 8rem 4.5rem;
+
+  background: linear-gradient(183.41deg, #67C3F3 -8.57%, #5A98F2 82.96%);
+}
+
+.footer .text-area p {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.75rem;
+  color: var(--white);
+
+  max-width: 25rem;
+  margin: 2rem 0;
+}
+
+.footer .text-area span {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.75rem;
+  color: var(--white);
+}
+
+@media screen and (max-width: 1440px) {
+  .e-fidelity img,
+  .mobile-app img {
+    width: 28rem;
+  }
+
+  .e-fidelity .text-area {
+    margin-right: 0;
+  }
+
+  .footer {
+    margin-top: 2rem;
+  }
+}
+
+@media screen and (max-width: 1251px) {
+  .e-fidelity img,
+  .mobile-app img {
+    width: 21rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .e-fidelity,
+  .mobile-app {
+    flex-direction: column;
+  }
+
+  .e-fidelity .text-area,
+  .mobile-app .text-area {
+    text-align: center;
+  }
+
+  .e-fidelity .text-area .register-button {
+    margin: 0 auto;
+  }
+
+  .mobile-app .text-area h2::after {
+    margin: 30px auto;
+  }
+
+  .e-fidelity img,
+  .mobile-app img {
+    margin: 2rem auto 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .e-fidelity img,
+  .mobile-app img {
+    width: 15rem;
+  }
+
+  .our-services .cards .line-1,
+  .our-services .cards .line-2 {
+    flex-direction: column;
+  }
+
+  .e-fidelity,
+  .mobile-app {
+    padding: 0 5rem;
+  }
+
+  .e-fidelity .text-area h1 {
+    font-size: 2rem;
+  }
+
+  .our-services .text-area h2,
+  .mobile-app .text-area h2 {
+    font-size: 1.75rem;
+  }
+
+  .e-fidelity .text-area p,
+  .our-services .text-area p,
+  .mobile-app .text-area p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .footer {
+    padding-left: 4rem;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .e-fidelity img,
+  .mobile-app img {
+    width: 12rem;
+  }
+
+  .footer {
+    padding: 1.75rem 2rem 1.5rem;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .our-services .cards .card {
+    width: 20rem;
+    height: 20.25rem;
+
+    padding: 0 1.75rem;
+  }
+
+  .our-services .cards .card h3 {
+    font-size: 1.125rem;
+  }
+
+  .our-services .cards .card p {
+    font-size: 0.875rem;
+  }
+}

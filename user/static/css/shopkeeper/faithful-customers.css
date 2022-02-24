@@ -1,0 +1,97 @@
+.faithful-customers-wrapper {
+  display: flex;
+  flex-direction: column;
+
+  padding: 0 8rem;
+}
+
+.faithful-customers-wrapper header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: calc(5.25rem - 3.5rem);
+}
+
+.faithful-customers-wrapper header h4 {
+  font-size: 1.25rem;
+  color: var(--title);
+}
+
+.faithful-customers-wrapper header a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 1rem;
+
+  padding: calc(1rem - 2px) calc(3.5rem - 24px);
+
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--primary);
+  text-decoration: none;
+
+  border-radius: 55px;
+  border: 2px solid var(--primary);
+
+  background-color: transparent;
+
+  cursor: pointer;
+  transition: filter .2s;
+}
+
+.faithful-customers-wrapper header a:hover {
+  filter: brightness(0.8);
+}
+
+.faithful-customers-wrapper .table-wrapper {
+  margin-top: 2rem;
+}
+
+.faithful-customers-wrapper .table-wrapper table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.faithful-customers-wrapper .table-wrapper table td,
+.faithful-customers-wrapper .table-wrapper table th {
+  border: 1px solid #ddd;
+  padding: 0.5rem;
+}
+
+.faithful-customers-wrapper .table-wrapper table tr:nth-child(even){background-color: #f2f2f2;}
+
+.faithful-customers-wrapper .table-wrapper table tr:hover {background-color: #ddd;}
+
+.faithful-customers-wrapper .table-wrapper table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+@media screen and (max-width: 768px) {
+  .faithful-customers-wrapper {
+    padding: 0 5rem;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .faithful-customers-wrapper {
+    padding: 0 3rem;
+  }
+
+  .faithful-customers-wrapper header a {
+    gap: 0.5rem;
+    padding: calc(0.75rem - 2px) calc(3rem - 24px);
+    font-size: 1rem;
+  }
+
+  .faithful-customers-wrapper .table-wrapper table td,
+  .faithful-customers-wrapper .table-wrapper table th {
+    padding: 0.25rem;
+    font-size: 0.875rem;
+  }
+}
