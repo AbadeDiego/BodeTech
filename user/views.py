@@ -88,7 +88,7 @@ def getFiles(path):
         if file.endswith(".png"):
             images.append(os.path.join(path, file))
             
-filesPath = "/static/images/fidelity"
+filesPath = "\\static\\images\\fidelity"
 
 getFiles(filesPath)
 
