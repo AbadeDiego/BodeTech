@@ -84,11 +84,11 @@ def beneficios(request):
 images=[]
 
 def getFiles(path):
-    for file in os.listdir(path):
-        if file.endswith(".png"):
-            images.append(os.path.join(path, file))
+	for file in os.listdir(path):
+		if file.endswith(".png"):
+			images.append(os.path.join(path, file))
             
-filesPath = r"\static\images\fidelity"
+filesPath = r".\user\static\images\fidelity"
 
 getFiles(filesPath)
 
