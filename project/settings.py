@@ -23,7 +23,7 @@ STATIC_ROOT = os.path.join(SEC_BASE_DIR, 'staticfiles')
 STATIC_URL = '../user/static'
 
 STATICFILES_DIRS = (
-    os.path.join(SEC_BASE_DIR, 'static'),
+    os.path.join(SEC_BASE_DIR, STATIC_URL),
 )
 
 
