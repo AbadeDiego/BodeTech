@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SEC_BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 STATIC_ROOT = os.path.join(SEC_BASE_DIR, 'staticfiles')
-STATIC_URL = '/static/'
+STATIC_URL = '../user/static'
 
 STATICFILES_DIRS = (
     os.path.join(SEC_BASE_DIR, 'static'),
