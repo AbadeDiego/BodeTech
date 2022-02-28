@@ -5,6 +5,7 @@ const code = document.querySelector('.code')
 const cards = document.getElementById('cards')
 const body = document.querySelector('body')
 const response = []
+const selectedCards = []
 
 const img3comLink = `
 <div class="card">
@@ -38,6 +39,38 @@ const img4 = `
   </div>
 </div> `
 
+handleInsertImage()
+
+function handleInsertImage() {
+  let stores;
+
+  if (localStorage.getItem('@e-fidelity:stores')) {
+    stores = localStorage.getItem('@e-fidelity:stores').split(',')
+  }
+
+  if (stores != null) {
+    if (stores.find(element => element == "12")) {
+      cards.innerHTML += img3comLink
+      response.push("12")
+    }
+
+    if (stores.find(element => element == "123")) {
+      cards.innerHTML += img4comLink
+      response.push("123")
+    }
+
+    if (stores.find(element => element == "1234")) {
+      cards.innerHTML += img3
+      response.push("1234")
+    }
+
+    if (stores.find(element => element == "12345")) {
+      cards.innerHTML += img4
+      response.push("12345")
+    }
+  }
+}
+
 function showAlert(message) {
   const wrapper = document.createElement('div')
   wrapper.innerHTML = '<div class="alert">' + message +'</div>'
@@ -50,11 +83,26 @@ function showAlert(message) {
 }
 
 function handleInsertCard(code, image) {
-  if (response.find(element => element == code)) {
-    showAlert("Cartão fidelidade já adicionado!")
+  let stores;
+
+  if (localStorage.getItem('@e-fidelity:stores')) {
+    stores = localStorage.getItem('@e-fidelity:stores').split(',')
+  }
+
+  if (stores != null) {
+    if (stores.find(element => element == code)) {
+      showAlert("Cartão fidelidade já adicionado!")
+    } else {
+      cards.innerHTML += image
+      response.push(code)
+  
+      localStorage.setItem('@e-fidelity:stores', response)
+    }
   } else {
     cards.innerHTML += image
     response.push(code)
+
+    localStorage.setItem('@e-fidelity:stores', response)
   }
 }
 
