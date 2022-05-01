@@ -59,10 +59,9 @@ def Login(request):
 		# AuthenticationForm_can_also_be_used__
 
 		first_name = request.POST.get('first_name')
-		tipo_juridico = request.POST.get('tipo_juridico', False)
 		username = request.POST['username']
 		password = request.POST['password']
-		user = authenticate(request, username = username, password = password, tipo_juridico = tipo_juridico, first_name = first_name)
+		user = authenticate(request, username = username, password = password, first_name = first_name)
 		if user is not None:
 			form = login(request, user)
 			messages.success(request, f' Bem vindo {username}!')
@@ -77,27 +76,6 @@ def Login(request):
 def prediction(request):
 	
 	return render(request, 'user/prediction.html', {'title':'E-Fidelity| O cartão fidelidade digital.'})
-
-
-########### seções #####################################
-
-images=[]
-
-def getFiles(path):
-	for file in os.listdir(path):
-		if file.endswith(".png"):
-			images.append(os.path.join(path, file))
-            
-filesPath = r".\user\static\images\fidelity"
-
-getFiles(filesPath)
-
-def section(request, num):
-	if 1 <= num <= 11:
-		with open(images[num-1], "rb") as f:
-			return HttpResponse(f.read(), content_type="image/png")    
-	else:
-		raise Http404("No such section")
 
 #--------------------------------------------- Logista --------------------------------------------------------
 
