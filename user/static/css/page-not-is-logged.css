@@ -129,7 +129,7 @@
   padding: 0 2.25rem;
 
   background-color: var(--white);
-  box-shadow: 10px 40px 50px rgba(229, 233, 246, 0.4);
+  box-shadow: 10px 40px 50px rgba(223, 197, 175, 0.4);
   border-radius: 20px;
 }
 
@@ -202,7 +202,7 @@
 .footer {
   padding: 7.5rem 8rem 4.5rem;
 
-  background: linear-gradient(183.41deg, #67C3F3 -8.57%, #5A98F2 82.96%);
+  background: linear-gradient(183.41deg, #ac9071 -8.57%, #b97040 82.96%);
 }
 
 .footer .text-area p {

@@ -72,11 +72,11 @@ def Login(request):
 	form = AuthenticationForm()
 	return render(request, 'user/login.html', {'form':form, 'title':'E-Fidelity| Login'})
 
-########### beneficios ######################################
+########### prediction ######################################
 
-def beneficios(request):
+def prediction(request):
 	
-	return render(request, 'user/beneficios.html', {'title':'E-Fidelity| O cartão fidelidade digital.'})
+	return render(request, 'user/prediction.html', {'title':'E-Fidelity| O cartão fidelidade digital.'})
 
 
 ########### seções #####################################
@@ -101,47 +101,27 @@ def section(request, num):
 
 #--------------------------------------------- Logista --------------------------------------------------------
 
-########### historico ######################################
+########### diagnostic #####################################
 
-def historico(request):
+def diagnostic(request):
 	
-	return render(request, 'user/historico.html', {'title':'E-Fidelity| O cartão fidelidade digital.'})
+	return render(request, 'user/diagnostic.html', {'title':'E-Fidelity| O cartão fidelidade digital.'})
 
-########### clientes #######################################
+########### database #######################################
 
-def clientes(request):
+def database(request):
 	
-	return render(request, 'user/clientes.html', {'title':'E-Fidelity| O cartão fidelidade digital.'})
+	return render(request, 'user/database.html', {'title':'E-Fidelity| O cartão fidelidade digital.'})
 
-########### publication #####################################
+########### Veterinary #####################################
 
-def posts(request):
-
-    # Get start and end points
-    start = int(request.GET.get("start") or 0)
-    end = int(request.GET.get("end") or (start + 9))
-
-    # Generate list of posts
-    data = []
-    for i in range(start, end + 1):
-        data.append(f"Poste {i}, Desconto de 10% em compras acima de 100 R$.")
-
-    # Artificially delay speed of response
-    time.sleep(1)
-
-    # Return list of posts
-    return JsonResponse({
-        "posts": data
-    })
-
-
-def publication(request):
+def veterinary(request):
 	
-	return render(request, 'user/publication.html', {'title':'E-Fidelity| O cartão fidelidade digital.'})
+	return render(request, 'user/veterinary.html', {'title':'E-Fidelity| O cartão fidelidade digital.'})
 
-########### card ############################################
+########### Índices ##########################################
 
-def card(request):
+def indices(request):
 	
-	return render(request, 'user/card.html', {'title':'E-Fidelity| O cartão fidelidade digital.'})
+	return render(request, 'user/indices.html', {'title':'E-Fidelity| O cartão fidelidade digital.'})
 

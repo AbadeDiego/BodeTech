@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>{{ EFidelity }}</title>
+  <title>{{ EFidelityu }}</title>
 
   <!-- Bootstrap -->
   <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />-->
@@ -47,10 +47,12 @@
 
   <!-- Header -->
   <header class="header">
-    <nav>
-      <img src="{% static 'images/header/logo.png' %}" alt="e-fidelity">
-      <a href="{% url 'index' %}" class="nav__link">Home</a>
-    </nav>
+    <div class="button-area">
+      <img src="{% static 'images/user-not-is-logged/logo-alt_b.png' %}" alt="e-fidelity">
+      <a href="{% url 'index' %}" class="home-button">
+        <img src="{% static 'images/header/home2.png' %}" alt="Home">
+        Home</a>
+    </div>
     <div class="button-area">
       {% if user.is_authenticated %}
       <a href="{% url 'logout' %}" class="logout-button">
@@ -59,9 +61,11 @@
       </a>
       {% else %}
       <a href="{% url 'login' %}" class="login-button">
+        <img src="{% static 'images/header/login.png' %}" alt="Login">
         Login
       </a>
       <a href="{% url 'register' %}" class="register-button">
+        <img src="{% static 'images/header/sign-in(1).png' %}" alt="Register">
         Cadastrar-se
       </a>
       {% endif %}
@@ -80,21 +84,44 @@
 
   <main class="client">
     <div class="text-area">
-      <h2>Olá, {{ user.username }}! Aproveite os benefícios do seu cartão fidelidade</h2>
-      <p>Para cadastrar um cartão fidelidade informe o código do Lojista</p>
+      <h3>Olá, {{ user.username }}! Aproveite os serviços do BodeTech.</h3>
     </div>
 
-    <form class="input-group" id="client-form" autocomplete="off">
-      <input type="text" class="code" placeholder="Inserir código">
-      <button type="submit">Validar código</button>
-    </form>
+  <section class="shopkeeper">
+    <div class="cards">
+      <div class="card">
+        <img src="{% static 'images/shopkeeper/analytics.png' %}" alt="Índices">
+        <a href="{% url 'indices' %}">Índices zootécnicos</a>
+      </div>
 
-    <div class="line"></div>
+      <div class="card">
+        <img src="{% static 'images/shopkeeper/veterinarydigital.png' %}" alt="Veterinary">
+        <a href="{% url 'veterinary' %}">Veterinário virtual</a>
+      </div>
 
-    <div id="cards"></div>
+      <div class="card">
+        <img src="{% static 'images/shopkeeper/balance.png' %}" alt="Prediction">
+        <a href="{% url 'prediction' %}">Predição do peso</a>
+      </div>
 
-    <script src="{% static 'js/fidelity-card.js' %}"></script>
-  </main>
+      <div class="card">
+        <img src="{% static 'images/shopkeeper/biometrics.png' %}" alt="Biometric">
+        <a href="{% url 'veterinary' %}">Reconhecimento digital</a>
+      </div>
+
+      <div class="card">
+        <img src="{% static 'images/shopkeeper/base.png' %}" alt="Database">
+        <a href="{% url 'database' %}">Banco de dados</a>
+      </div>
+
+      <div class="card">
+        <img src="{% static 'images/shopkeeper/diagnosticdigital.png' %}" alt="Diagnostic">
+        <a href="{% url 'diagnostic' %}">Diagnóstico digital</a>
+      </div>
+    </div>
+  </section>
+
+
 
   {% endif %}
 
@@ -105,43 +132,53 @@
 
   <section class="e-fidelity">
     <div class="text-area">
-      <h1 style="font-weight: 500;">E-Fidelity - Cartão Fidelidade Digital</h1>
+      <h2 style="font-weight: 800;">Propósito da BodeTech</h2>
       <p>
-        Somos StartUp que tem como missão auxiliar os empreendedores a conquistarem sua posição no mercado digital, oferecendo serviços que permite uma maior conectividade com os seus consumidores e, consequentemente, possibilitar um alavancamento nas vendas.
+        A BodeTech é uma Startup que tem como missão A BodeTech é uma Startup que tem como missão A BodeTech é uma 
+        Startup que tem como missão A BodeTech é uma Startup que tem como missão.
       </p>
-      <a class="register-button" href="{% url 'register' %}">Cadastrar-se</a>
     </div>
-    <img src="{% static 'images/user-not-is-logged/metrics.svg' %}" alt="Metrics">
+    <img src="{% static 'images/user-not-is-logged/metrics_b.svg' %}" alt="Metrics">
   </section>
 
   <section class="our-services">
     <div class="text-area">
       <h2>Nossos serviços</h2>
-      <p>O E-fidelity tem como proposta oferecer serviços que permitem uma conectividade entre os consumidores e os estabelecimentos cadastrados. Permitindo que os consumidores tenham acesso a benefícios especiais; e que os estabelecimentos tenham posse de uma ferramenta que possibilitem uma alavancagem nas suas vendas.</p>
+      <p></p>
     </div>
     <div class="cards">
       <div class="line-1">
         <div class="card">
-          <img src="{% static 'images/user-not-is-logged/icons/bar-chart.png' %}" alt="Alavanque as suas vendas">
-          <h3>Alavanque suas vendas</h3>
-          <p>Com a ajuda da e-fidelity, você pode visualizar os seus clientes fiéis, aqueles que te acompanham com frequência.</p>
+          <img src="{% static 'images/user-not-is-logged/icons/analytics_b.png' %}" alt="Índices zootécnicos">
+          <h3>Índices zootécnicos</h3>
+          <p>Aplicação mobile para o acompanhamento dos índices zootécnicos do rebanho de uma forma simples e intuitiva.</p>
         </div>
         <div class="card">
-          <img src="{% static 'images/user-not-is-logged/icons/credit-card.png' %}" alt="Cartão fidelidade">
-          <h3>Cartão fidelidade</h3>
-          <p>Já possui  um cartão fidelidade digital? Como empreendedor, você já deve ter notado a importância de fidelizar os clientes e mantê-los engajados e satisfeitos.</p>
+          <img src="{% static 'images/user-not-is-logged/icons/balance.png' %}" alt="Predição do peso">
+          <h3>Predição do peso</h3>
+          <p>Algoritmos de inteligência artificial aplicados em fotos digitais serão utilizados para realizar à predição do peso dos animais.</p>
+        </div>
+        <div class="card">
+          <img src="{% static 'images/user-not-is-logged/icons/veterinary.png' %}" alt="Acompanhamento digital">
+          <h3>Veterinário virtual</h3>
+          <p>Acompanhamento veterinário digital será realizado por veterinários associados à plataforma.</p>
         </div>
       </div>
       <div class="line-2">
         <div class="card">
-          <img src="{% static 'images/user-not-is-logged/icons/tablet.png' %}" alt="Lojista">
-          <h3>Lojistas</h3>
-          <p>Tenha as melhores ferramentas para administrar melhor as suas vendas.</p>
+          <img src="{% static 'images/user-not-is-logged/icons/biometric.png' %}" alt="Reconhecimento digital">
+          <h3>Reconhecimento digital</h3>
+          <p>Algoritmos de inteligência artificial de reconhecimento biométrico serão utilizados para a identificação dos animais.</p>
         </div>
         <div class="card">
-          <img src="{% static 'images/user-not-is-logged/icons/user.png' %}" alt="Clientes">
-          <h3>Clientes</h3>
-          <p>Nosso objetivo principal é fazer com que o cliente volte mais vezes ao seu estabelecimento ou adquira seu serviço.</p>
+          <img src="{% static 'images/user-not-is-logged/icons/medical_a.png' %}" alt="Diagnóstico digital">
+          <h3>Diagnóstico digital</h3>
+          <p>A avaliação clínica dos animais com papilomatose e outras doenças visuais poderá ser realizada através do algoritmo de diagnóstico.</p>
+        </div>
+        <div class="card">
+          <img src="{% static 'images/user-not-is-logged/icons/database.png' %}" alt="Banco de dados">
+          <h3>Banco de dados</h3>
+          <p>As informações acerca dos animais serão armazenadas no banco de dados e, desta forma,  é possível ter acesso às informações rapidamente..</p>
         </div>
       </div>
     </div>
@@ -150,55 +187,23 @@
   <section class="mobile-app">
     <div class="text-area">
       <h2>Nosso aplicativo para celular</h2>
-      <p>Para maior facilitação, tanto para os clientes quanto para os gestores do negócio, possuímos um aplicativo para celular!</p>
+      <p>O aplicativo mobile da BodeTech é um projeto futuro! </p>
+      <break></break>
+      <p>Se interessou pelo nossa ideia e quer ser um investidor? Entre em contato (74) 9905-4622. </p>
     </div>
-    <img src="{% static 'images/user-not-is-logged/mobile-app.svg' %}" alt="Mobile app">
+    <img src="{% static 'images/user-not-is-logged/mobile-app_b.svg' %}" alt="Mobile app">
   </section>
 
   <section class="testimonials"></section>
 
   <footer class="footer">
     <div class="text-area">
-      <img src="{% static 'images/user-not-is-logged/logo-alt.png' %}" alt="E-Fidelity">
-      <p>Somos uma StartUp que oferecemos serviços que permite uma maior conectividade com os consumidores e, consequentemente, possibilitar um alavancamento nas vendas, para os empreendedores.</p>
-      <span>&copy; e-fidelity. Todos os direitos reservados.</span>
+      <img src="{% static 'images/user-not-is-logged/logo-alt_b.png' %}" alt="E-Fidelity">
+      <p> </p>
+      <span>&copy;Todos os direitos reservados.</span>
     </div>
   </footer>
 
-  {% endif %}
-
-
-  <!-- Página do Lojista -->
-
-  {% if user.is_authenticated %}
-  {% if user.first_name == "lojista" %}
-
-  <section class="shopkeeper">
-    <h2>Olá, {{ user.last_name }}! Aproveite os nossos serviços.</h2>
-    <div class="cards">
-      <div class="card">
-        <img src="{% static 'images/shopkeeper/fidelity-card.png' %}" alt="Cartão fidelidade">
-        <a href="{% url 'card' %}">Personalizar cartão fidelidade</a>
-      </div>
-
-      <div class="card">
-        <img src="{% static 'images/shopkeeper/faithful-customers.png' %}" alt="Clientes fiéis">
-        <a href="{% url 'clientes' %}">Consultar lista de clientes fiéis</a>
-      </div>
-
-      <div class="card">
-        <img src="{% static 'images/shopkeeper/historic.png' %}" alt="Histórico de vendas">
-        <a href="{% url 'historico' %}">Consultar histórico de vendas</a>
-      </div>
-
-      <div class="card">
-        <img src="{% static 'images/shopkeeper/ad.png' %}" alt="Anúncios para clientes">
-        <a href="{% url 'publication' %}">Fazer anúncios para clientes</a>
-      </div>
-    </div>
-  </section>
-
-  {% endif %}
   {% endif %}
 
   {% endblock %}

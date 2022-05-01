@@ -4,10 +4,12 @@
 
 :root {
   --title: #000000;
-  --text: #7D7987;
-  --text-alt: #1F1534;
+  --text: #555149;
+  --text-alt: #e2b699;
+  --second: #fff8f2;
+
   
-  --primary: #458FF6;
+  --primary: #AB4D11;
 
   --white: #FFFFFF;
 }

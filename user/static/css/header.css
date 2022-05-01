@@ -4,22 +4,25 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-
+  background-color: #a17c66; /*linear-gradient(147deg, #160901 0%, #291305 100%); linear-gradient(147deg, #5f3216 0%, #774120 100%); */
+  background-image:  linear-gradient(183.41deg, #ac9071 -8.57%, #b97040 82.96%);
   padding: 3.5rem 8rem;
 }
 
-.header nav {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.header .home-button{
+  padding: 1rem 2.75rem;
+  margin-left: 1.5rem;
 
-  gap: 2rem;
-}
-
-.header nav .nav__link {
-  text-decoration: none;
+  font-size: 18px;
   font-weight: bold;
-  color: var(--text-alt);
+  color: var(--white); 
+  text-decoration: none;
+
+  border-radius: 55px;
+  border: 2px solid rgb(38, 96, 253);
+  background-color:  rgba(1, 1, 12);
+
+  cursor: pointer;
   transition: filter .2s;
 }
 
@@ -34,17 +37,18 @@
 
   gap: 1rem;
 
-  padding: calc(1rem - 2px) calc(4.75rem - 24px);
+  padding: calc(1.1rem - 2px) calc(4.75rem - 24px);
 
   font-size: 18px;
   font-weight: bold;
-  color: var(--primary);
+  color: var(--white); 
   text-decoration: none;
 
   border-radius: 55px;
-  border: 2px solid var(--primary);
+  border: 2px solid rgb(38, 96, 253);
 
-  background-color: transparent;
+  background-color:  rgb(1, 1, 12);
+
 
   cursor: pointer;
   transition: filter .2s;
@@ -55,17 +59,17 @@
 }
 
 .header .button-area .login-button {
-  padding: calc(1rem - 2px) 4.75rem;
+  padding: calc(1rem - 2px) 4.15rem;
 
   font-size: 18px;
   font-weight: bold;
-  color: var(--primary);
+  color:  var(--white); 
   text-decoration: none;
 
   border-radius: 55px;
-  border: 2px solid var(--primary);
+  border: 2px solid rgb(38, 96, 253);
 
-  background-color: transparent;
+  background-color:  rgb(1, 1, 12);
 
   cursor: pointer;
   transition: filter .2s;
@@ -81,19 +85,20 @@
 
   font-size: 18px;
   font-weight: bold;
-  color: var(--white);
+  color: var(--white); 
   text-decoration: none;
 
-  background-color: var(--primary);
-
-  border: none;
   border-radius: 55px;
+  border: 2px solid rgb(38, 96, 253);
+  background-color: rgb(1, 1, 12);
+
 
   cursor: pointer;
   transition: filter .2s;
+
 }
 
-.header .button-area .register-button:hover {
+.header .button-area .home-button .register-button:hover {
   filter: brightness(0.8);
 }
 
@@ -179,7 +184,7 @@
   text-decoration: none;
 
   border-radius: 55px;
-  border: 2px solid var(--primary);
+  border: 2px solid blue;
 
   background-color: transparent;
 
@@ -217,7 +222,7 @@
   filter: brightness(0.8);
 }
 
-.mobile-nav .button-area .register-button {
+.mobile-nav .button-area .register-button .home-button{
   display: flex;
   align-items: center;
   justify-content: center;
@@ -239,7 +244,7 @@
   transition: filter .2s;
 }
 
-.mobile-nav .button-area .register-button:hover {
+.mobile-nav .button-area .home-button .register-button:hover {
   filter: brightness(0.8);
 }
 
@@ -247,7 +252,7 @@
   .header nav .nav__link,
   .header .button-area .logout-button,
   .header .button-area .login-button,
-  .header .button-area .register-button {display: none;}
+  .header .button-area .register-button .home-button {display: none;}
 
   .header .button-area .menu {
     display: block;

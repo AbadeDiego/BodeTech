@@ -5,6 +5,8 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 <div class="container">
+  <br> <br/>
+  <br> <br/>
   <form method="POST">
     {% csrf_token %}
     <fieldset class="form-group mb-3">
@@ -15,8 +17,9 @@
     </center>
     <br />
     <center>
-      <sub><a href="{% url 'login' %}">Já tem uma conta no E-Fidelity? Entrar na minha conta.</a></sub>
+      <sub><a href="{% url 'login' %}" style="text-decoration: none; color: blue; padding:2%; cursor:pointer; margin-right:2%; font-size: 14px;">Já tem uma conta no BodeTech? Entrar na minha conta.</a></sub>
     </center>
   </form>
+  <br> <br/>
 </div>
 {% endblock start %}

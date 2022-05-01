@@ -23,6 +23,8 @@
   </style>
 
  <div class="container" style="max-width: 80vw;">
+  <br> <br/>
+  <br> <br/>
   <center>
     <form method="POST">
     {% csrf_token %}
@@ -31,9 +33,10 @@
     </fieldset>
   <center>
     <button style="font-size: 1.25rem; padding: 0.5rem 1rem;" class="btn btn-primary" type="submit"><strong>Fazer login</strong></button>
-    <br> <br/>
+   <!-- <br> <br/>
     <br> <br/>
     <p>ou</p>
+    
     <div class="social-login-container">
       <a class="btn btn-primary" style="background-color: #3b5998; border: 0;" href="{% provider_login_url 'facebook' %}" role="button">
         <i class="fa fa-facebook" style="color: white;"></i>
@@ -43,11 +46,11 @@
         <i class="fa fa-google"></i>
         <b style="margin-left: 1rem;">Login com Google</b>
       </a>
-    </div>
+    </div>-->
   </center>
   <br> <br/>
   <center>
-  <sub><a href="{% url 'register' %}" style="text-decoration: none; color: blue; padding:2%; cursor:pointer; margin-right:2%;">Ainda não tem conta no E-Fidelity? Cadastra-se aqui.</a></sub>
+  <sub><a href="{% url 'register' %}" style="text-decoration: none; color: blue; padding:2%; cursor:pointer; margin-right:2%; font-size: 14px;">Ainda não tem conta no BodeTech? Cadastra-se aqui.</a></sub>
   </form>
   </center>
  </div>

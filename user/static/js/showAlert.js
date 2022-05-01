@@ -1,3 +1,37 @@
+
+
+const body = document.querySelector('body')
+
+
+//############## showAlert #############################
+
+
+function showAlert(message) {
+  const wrapper = document.createElement('div')
+  wrapper.innerHTML = '<div class="alert">' + message +'</div>'
+
+  body.append(wrapper)
+
+  setTimeout(() => {
+    wrapper.parentNode.removeChild(wrapper)
+  }, 1500)
+}
+
+//############### índices template ######################
+
+var buttons = document.querySelectorAll(".btn-group").length;
+
+for (var i = 0; i < buttons ; i++) {
+    document.querySelectorAll(".btn-group")[i].addEventListener("click", function() {
+        showAlert("Funcionalidade em desenvolvimento.", 'danger')
+    });
+}
+
+
+
+
+/*
+
 let buttonStoreName;
 let storeName;
 const form = document.getElementById('client-form')
@@ -71,17 +105,6 @@ function handleInsertImage() {
   }
 }
 
-function showAlert(message) {
-  const wrapper = document.createElement('div')
-  wrapper.innerHTML = '<div class="alert">' + message +'</div>'
-
-  body.append(wrapper)
-
-  setTimeout(() => {
-    wrapper.parentNode.removeChild(wrapper)
-  }, 3000)
-}
-
 function handleInsertCard(code, image) {
   let stores;
 
@@ -105,31 +128,19 @@ function handleInsertCard(code, image) {
     localStorage.setItem('@e-fidelity:stores', response)
   }
 }
+ Publication template
 
 function validationInsertCard() {
-  switch (code.value) {
-    case "12":
-      handleInsertCard("12", img3comLink)
-      break
-    case "123":
-      handleInsertCard("123", img4comLink)
-      break
-    case "1234":
-      handleInsertCard("1234", img3)
-      break
-    case "12345":
-      handleInsertCard("12345", img4)
-      break
-    default:
-      showAlert("Código inválido!", 'danger')
-  }
+  alert("Serviço iindisponível!")
 }
 
-form.addEventListener('submit', e => {
-  e.preventDefault()
+button.addEventListener('submit', e => {
+e.preventDefault()
 
-  validationInsertCard()
+validationInsertCard()
 })
+
+
 
 function getStoreName() {
   const buttonStore = document.querySelector('.card-body a')
@@ -137,3 +148,4 @@ function getStoreName() {
   
   localStorage.setItem('@e-fidelity:storeName', storeName)
 }
+*/

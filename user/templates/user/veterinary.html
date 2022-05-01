@@ -1,0 +1,34 @@
+{% extends "user/index.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block start %}
+
+<main class="ad-wrapper">
+    <header>
+        <h4>Olá, {{ user.last_name }}! Seu animal está doente? Não perca tempo entre em contato com os nossos veterinários.</h4>
+    </header>
+
+    <form autofocus id="form" class="input-group" autocomplete="off">
+        <textarea type="text" placeholder="Informe o motivo da consulta com vetirinário, seja o mais específico possível." id="myInput" ></textarea>
+        <button type="submit">Fazer consulta.</button>
+    </form>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelector('form').onsubmit = function() {
+        
+            let x = document.getElementById("myInput").value;
+            if (x == "") {
+                alert("Informe uma mensagem.")
+            } else {
+                alert("Sua mensagem foi registrada, em breve os nossos veterinários entrarão em contato com você.");
+            }
+
+        };
+    });
+    </script>
+</main>
+    
+
+
+{% endblock start %}

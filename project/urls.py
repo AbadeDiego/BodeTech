@@ -12,11 +12,10 @@ urlpatterns = [
 	path('login/', user_view.Login, name ='login'),
 	path('logout/', auth.LogoutView.as_view(template_name ='user/index.html'), name ='logout'),
 	path('register/', user_view.register, name ='register'),
-    path('historico/', user_view.historico, name ='historico'),
-    path('clientes/', user_view.clientes, name ='clientes'),
-    path('publication/', user_view.publication, name ='publication'),
-    path('card/', user_view.card, name ='card'),
-    path("posts/", user_view.posts, name="posts"),
-    path("beneficios/", user_view.beneficios, name="beneficios"),
+    path('diagnostic/', user_view.diagnostic, name ='diagnostic'),
+    path('database/', user_view.database, name ='database'),
+    path('veterinary/', user_view.veterinary, name ='veterinary'),
+    path('indices/', user_view.indices, name ='indices'),
+    path("prediction/", user_view.prediction, name="prediction"),
     path("accounts/", include('allauth.urls'))
 ]
