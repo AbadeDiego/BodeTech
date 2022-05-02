@@ -7,19 +7,28 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css">
 
   <style>
-    .social-login-container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .container button {
+  font-size: 17px;
+  font-weight: bold;
+  color: var(--white);
+  text-decoration: none;
 
-      gap: 1rem;
-    }
+  background-color: rgb(38, 96, 253);
 
-    @media screen and (max-width: 425px) {
-      .social-login-container {
-        flex-direction: column;
-      }
-    }
+  border: 2px solid rgb(38, 96, 253);
+  border-radius: 5px;
+
+  cursor: pointer;
+  transition: .4s;
+  }
+
+  .container button:hover {
+  color: var(--primary);
+  background-color: transparent;
+  border: 2px solid rgb(38, 96, 253);
+  }
+
+
   </style>
 
  <div class="container" style="max-width: 80vw;">
@@ -31,25 +40,8 @@
     <fieldset class="form-group mb-3">
       {{ form|crispy}}
     </fieldset>
-  <center>
-    <button style="font-size: 1.25rem; padding: 0.5rem 1rem;" class="btn btn-primary" type="submit"><strong>Fazer login</strong></button>
-   <!-- <br> <br/>
-    <br> <br/>
-    <p>ou</p>
-    
-    <div class="social-login-container">
-      <a class="btn btn-primary" style="background-color: #3b5998; border: 0;" href="{% provider_login_url 'facebook' %}" role="button">
-        <i class="fa fa-facebook" style="color: white;"></i>
-        <b style="margin-left: 1rem;">Login com Facebook</b>
-      </a>
-      <a class="btn btn-primary" style="background-color: #db4437; border: 0;" href="{% provider_login_url 'google' %}" role="button">
-        <i class="fa fa-google"></i>
-        <b style="margin-left: 1rem;">Login com Google</b>
-      </a>
-    </div>-->
-  </center>
-  <br> <br/>
-  <center>
+    <button class="btn btn-primary" type="submit"><strong>Fazer login</strong></button>
+     <br> <br/>
   <sub><a href="{% url 'register' %}" style="text-decoration: none; color: blue; padding:2%; cursor:pointer; margin-right:2%; font-size: 14px;">Ainda não tem conta no BodeTech? Cadastra-se aqui.</a></sub>
   </form>
   </center>

@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>{{ EFidelityu }}</title>
+  <title>{{ BodeTech }}</title>
 
   <!-- Bootstrap -->
   <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />-->
@@ -49,7 +49,7 @@
   <header class="header">
     <div class="button-area">
       <img src="{% static 'images/user-not-is-logged/logo-alt_b.png' %}" alt="e-fidelity">
-      <a href="{% url 'index' %}" class="home-button">
+      <a href="{% url 'index' %}" class="home-button" style="width:50.3%;" >
         <img src="{% static 'images/header/home2.png' %}" alt="Home">
         Home</a>
     </div>
@@ -106,7 +106,7 @@
 
       <div class="card">
         <img src="{% static 'images/shopkeeper/biometrics.png' %}" alt="Biometric">
-        <a href="{% url 'veterinary' %}">Reconhecimento digital</a>
+        <a href="{% url 'biometric' %}">Reconhecimento digital</a>
       </div>
 
       <div class="card">
@@ -132,14 +132,17 @@
 
   <section class="e-fidelity">
     <div class="text-area">
-      <h2 style="font-weight: 800;">Propósito da BodeTech</h2>
-      <p>
+      <center>
+      <h2 style="font-size: 1.75rem;">Propósito da BodeTech</h2>
+      <p style="font-size: 18px;">
         A BodeTech é uma Startup que tem como missão integrar o pecuarista 
         com tecnologias que auxiliem no acompanhamento do rebanho, garantindo
         uma maior simplicidade e eficiência nas atividades desenvolvidas. 
       </p>
+    </center>
     </div>
-    <img src="{% static 'images/user-not-is-logged/metrics_b.svg' %}" alt="Metrics">
+    <break></break>
+    <img src="{% static 'images/user-not-is-logged/metrics_b.svg' %}" style="width: 40%; height: auto;" alt="Metrics">
   </section>
 
   <section class="our-services">
@@ -187,12 +190,14 @@
 
   <section class="mobile-app">
     <div class="text-area">
-      <h2>Nosso aplicativo para celular</h2>
+      <center>
+      <h2  style="font-size: 1.75rem;">Nosso aplicativo para celular</h2>
       <p>O aplicativo mobile da BodeTech é um projeto futuro! </p>
       <break></break>
-      <p>Se interessou pelo nossa ideia e quer ser um investidor? Entre em contato (74) 9 9905-4622. </p>
+      <p>Se interessou pelo nossa ideia e quer ser um investidor? Entre em contato <a href="https://wa.link/ube95j"> (74) 9 9905-4622</a>.</p>
     </div>
-    <img src="{% static 'images/user-not-is-logged/mobile-app_b.svg' %}" alt="Mobile app">
+      </center>
+    <img src="{% static 'images/user-not-is-logged/mobile-app_b.svg' %}" style="width: 40%; height: auto;" alt="Mobile app">
   </section>
 
   <section class="testimonials"></section>

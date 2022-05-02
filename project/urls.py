@@ -13,6 +13,7 @@ urlpatterns = [
 	path('logout/', auth.LogoutView.as_view(template_name ='user/index.html'), name ='logout'),
 	path('register/', user_view.register, name ='register'),
     path('diagnostic/', user_view.diagnostic, name ='diagnostic'),
+    path('biometric/', user_view.biometric, name ='biometric'),
     path('database/', user_view.database, name ='database'),
     path('veterinary/', user_view.veterinary, name ='veterinary'),
     path('indices/', user_view.indices, name ='indices'),

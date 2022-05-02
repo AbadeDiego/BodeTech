@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from .email_info import *
 from pathlib import Path
 import os
-
 import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -148,19 +147,17 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
+"""
 STATIC_URL = '/static/'
-
-
 
 EMAIL_USE_TLS = EMAIL_USE_TLS
 EMAIL_HOST = EMAIL_HOST
 EMAIL_HOST_USER = EMAIL_HOST_USER
 EMAIL_HOST_PASSWORD = EMAIL_HOST_PASSWORD
 EMAIL_PORT = EMAIL_PORT
-
 """
-STATIC_ROOT = os.path.join(BASE_DIR,'static')
 
+STATIC_ROOT = os.path.join(BASE_DIR,'static')
 STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
@@ -173,10 +170,11 @@ EMAIL_HOST = "smtp.gmail.com"
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 ####################collage email id #######################
-EMAIL_HOST_USER="freirediego128@gmail.com"
-EMAIL_HOST_PASSWORD="Dieg@128"
+EMAIL_HOST_USER="efidelity01@gmail.com"
+EMAIL_HOST_PASSWORD="22&fidelity"
 ###########################################################
-"""
+
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
