@@ -306,8 +306,6 @@
       .header .button-area .login-button{
         padding: calc(1.1rem - 2px) calc(1.8rem - 24px);
         font-size: 10px;
-        position: relative;
-        left: 30%;
       }
 
       .header .button-area .logo {
