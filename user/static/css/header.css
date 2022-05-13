@@ -9,37 +9,34 @@
   padding: 3.5rem 8rem;
 }
 
-.header .home-button{
+/* ------------------------ Header Buttons --------------------------*/
 
-  padding: 1rem 2.75rem;
-  margin-left: 1.5rem;
-  font-size: 15px;
+.header .button-area .home-button{
+  padding: calc(1.1rem - 2px) calc(2.4rem - 24px);
   
-
+  font-size: 15px;
   font-weight: bold;
   color: var(--white); 
   text-decoration: none;
+
   border-radius: 15px;
   border: 2px solid rgb(38, 96, 253);
   background-color:  rgba(1, 1, 12);
 
   cursor: pointer;
   transition: filter .2s;
-  background-position:0 -20px;
 }
 
-.header nav .nav__link:hover {
+.header .button-area .home-button:hover {
   filter: brightness(0.8);
+  color: rgb(1, 1, 12);
+  background-color: var(--white);
 }
+
 
 .header .button-area .logout-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
 
-  gap: 1rem;
-
-  padding: calc(1.1rem - 2px) calc(4.75rem - 24px);
+  padding: calc(1.1rem - 2px) calc(2.4rem - 24px);
 
   font-size: 15px;
   font-weight: bold;
@@ -50,17 +47,20 @@
   border: 2px solid rgb(38, 96, 253);
   background-color:  rgb(1, 1, 12);
 
-
   cursor: pointer;
   transition: filter .2s;
 }
 
 .header .button-area .logout-button:hover {
   filter: brightness(0.8);
+  color: rgb(1, 1, 12);
+  background-color: var(--white);
 }
 
 .header .button-area .login-button {
-  padding: calc(1rem - 2px) 4.15rem;
+  padding: calc(1.1rem - 2px) calc(2.15rem - 24px);
+  margin-left: 0.5rem;
+
 
   font-size: 15px;
   font-weight: bold;
@@ -78,11 +78,15 @@
 
 .header .button-area .login-button:hover {
   filter: brightness(0.8);
+  color: rgb(1, 1, 12);
+  background-color: var(--white);
 }
 
+
+
 .header .button-area .register-button {
-  padding: 1rem 2.75rem;
-  margin-left: 1.5rem;
+  padding: calc(1.1rem - 2px) calc(2.15rem - 24px);
+  margin-left: 0.5rem;
 
   font-size: 15px;
   font-weight: bold;
@@ -93,16 +97,29 @@
   border: 2px solid rgb(38, 96, 253);
   background-color: rgb(1, 1, 12);
 
-
   cursor: pointer;
   transition: filter .2s;
-
 }
 
-.header .button-area .home-button .register-button:hover {
+.header .button-area .register-button:hover {
+  filter: brightness(0.8);
+  color: rgb(1, 1, 12);
+  background-color: var(--white);
+}
+
+
+
+/* ------------------------ Header Nav --------------------------*/
+
+
+.header nav .nav__link:hover {
   filter: brightness(0.8);
 }
 
+
+
+
+/*
 .header .button-area .menu {
   display: none;
   
@@ -110,6 +127,7 @@
   background-color: transparent;
   border: none;
 }
+*/
 
 .mobile-nav {
   display: none;
@@ -174,8 +192,6 @@
   align-items: center;
   justify-content: center;
 
-  gap: 1rem;
-
   width: calc(25.5rem - 2px);
   height: calc(3.75rem - 2px);
 
@@ -228,8 +244,7 @@
   align-items: center;
   justify-content: center;
 
-  width: 10%;
-  height: calc(3.75rem - 2px);
+  padding: calc(1.1rem - 2px) calc(2.15rem - 24px);
 
   font-size: 15px;
   font-weight: bold;
@@ -249,29 +264,66 @@
   filter: brightness(0.8);
 }
 
-@media screen and (max-width: 1024px) {
-  .header nav .nav__link,
-  .header .button-area .logout-button,
-  .header .button-area .login-button,
-  .header .button-area .register-button .home-button {display: none;}
 
-  .header .button-area .menu {
-    display: block;
+/* ------------------------ Others Screens --------------------------*/
+
+
+@media screen and (max-width: 1024px) {
+  .header .button-area .register-button,
+  .header .button-area .home-button,
+  .header .button-area .logout-button,
+  .header .button-area .login-button{
+    padding: calc(1.1rem - 2px) calc(1.8rem - 24px);
+    font-size: 13px;
+    display: inline;
   }
 }
 
 @media screen and (max-width: 768px) {
-  .header {
-    padding: 3.5rem 5rem;
+    .header .button-area .register-button,
+    .header .button-area .home-button,
+    .header .button-area .logout-button,
+    .header .button-area .login-button{
+      padding: calc(1.1rem - 2px) calc(1.8rem - 24px);
+      font-size: 13px;
+      position: relative;
+      left: 40%;
+    }
+    .header .button-area .logo {
+      position: absolute;
+      top: 5%;
+      left: 10%;
+      }
   }
-}
 
-@media screen and (max-width: 425px) {
-  .header {
-    padding: 3.5rem 3rem;
+  
+
+
+@media screen and (max-width: 600px) {
+      .header .button-area .register-button,
+      .header .button-area .home-button,
+      .header .button-area .logout-button,
+      .header .button-area .login-button{
+        padding: calc(1.1rem - 2px) calc(1.8rem - 24px);
+        font-size: 10px;
+        position: relative;
+        left: 30%;
+      }
+
+      .header .button-area .logo {
+        position: absolute;
+        top: 5%;
+        left: 5%;   
+
+        }
   }
+
+  @media screen and (max-width: 475px) {
+    .header .button-area .login-button{
+      display: none;
+    }
+}
 
   .mobile-nav .button-area {
     flex-direction: column;
   }
-}

@@ -48,31 +48,31 @@
   <!-- Header -->
   <header class="header">
     <div class="button-area">
-      <img src="{% static 'images/user-not-is-logged/logo-alt_b.png' %}" alt="e-fidelity">
-      <a href="{% url 'index' %}" class="home-button" style="width:50.3%;" >
-        <img src="{% static 'images/header/home2.png' %}" alt="Home">
-        Home</a>
+      <img class="logo" src="{% static 'images/user-not-is-logged/logo-alt_b.png' %}" alt="Logo">
     </div>
     <div class="button-area">
+      <a href="{% url 'index' %}" class="home-button">
+        <img style="vertical-align: baseline; width:6%" src="{% static 'images/header/home2.png' %}" alt="Home">
+        Home</a>
       {% if user.is_authenticated %}
       <a href="{% url 'logout' %}" class="logout-button">
-        <img src="{% static 'images/header/log-out.png' %}" alt="Logout">
+        <img style="vertical-align: baseline; width:6%" src="{% static 'images/header/log-out.png' %}" alt="Logout">
         Logout
       </a>
       {% else %}
       <a href="{% url 'login' %}" class="login-button">
-        <img src="{% static 'images/header/login.png' %}" alt="Login">
+        <img style="vertical-align: baseline; width:6%" src="{% static 'images/header/login.png' %}" alt="Login">
         Login
       </a>
       <a href="{% url 'register' %}" class="register-button">
-        <img src="{% static 'images/header/sign-in(1).png' %}" alt="Register">
-        Cadastrar-se
+        <img style="vertical-align: baseline; width:6%" src="{% static 'images/header/sign-in(1).png' %}" alt="Register">
+        Cadastra-se
       </a>
       {% endif %}
-
+      <!--
       <div class="menu">
         <img src="{% static 'images/header/menu.png' %}" alt="Menu">
-      </div>
+      </div> -->
     </div>
   </header>
 
