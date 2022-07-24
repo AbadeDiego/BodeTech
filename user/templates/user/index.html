@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>{{ BodeTech }}</title>
+  <title>{{ Zootech }}</title>
 
   <!-- Bootstrap -->
   <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />-->
@@ -48,7 +48,7 @@
   <!-- Header -->
   <header class="header">
     <div class="button-area">
-      <img class="logo" src="{% static 'images/user-not-is-logged/logo-alt_b.png' %}" alt="Logo">
+      <img class="logo" src="{% static 'images/user-not-is-logged/logo-new.png' %}" style="width: 50%; height: auto;" alt="Logo">
     </div>
     <div class="button-area">
       <a href="{% url 'index' %}" class="home-button">
@@ -82,12 +82,86 @@
   {% if user.is_authenticated %}
   {% if user.first_name != "lojista" %}
 
-  <main class="client">
+  <section class="services">
+
     <div class="text-area">
-      <h3>Olá, {{ user.username }}! Aproveite os serviços do BodeTech.</h3>
+      <br/> <br/>
+      <h3>Olá, {{ user.username }}! Aproveite os serviços disponíveis da Zootech.</h3> 
+      <br/> <br/>
     </div>
 
-  <section class="shopkeeper">
+
+    <div class="cards">
+      <div class="line-1">
+        <div class="card">
+          <img src="{% static 'images/shopkeeper/veterinarydigital.png' %}" alt="Veterinary">
+          <a href="https://forms.gle/8BHfs4Gkeg51JgWSA">Assistêcnia técnica</a>
+        </div>
+        <div class="card">
+          <img src="{% static 'images/shopkeeper/analytics.png' %}" alt="Índices">
+          <a href="{% url 'indices' %}">Índices zootécnicos</a>
+        </div>
+        <div class="card">
+          <img src="{% static 'images/shopkeeper/balance.png' %}" alt="Prediction">
+          <a href="{% url 'prediction' %}">Predição do peso</a>
+        </div>
+      </div>
+      <div class="line-2">
+        <div class="card">
+          <img src="{% static 'images/shopkeeper/biometrics.png' %}" alt="Biometric">
+          <a href="{% url 'biometric' %}">Biometria</a>
+        </div>
+        <div class="card">
+          <img src="{% static 'images/shopkeeper/diagnosticdigital.png' %}" alt="Diagnostic">
+          <a href="{% url 'diagnostic' %}">Diagnóstico digital</a>
+        </div>
+        <div class="card">
+          <img src="{% static 'images/shopkeeper/base.png' %}" alt="Database">
+          <a href="{% url 'database' %}">Gestão financeira</a>
+         </div>
+      </div>
+    </div>
+
+  </section>
+
+
+  <!--
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col">
+        <div class="card">
+          <img src="{% static 'images/shopkeeper/analytics.png' %}" alt="Índices">
+          <div class="card-body">
+            <a href="{% url 'indices' %}">Índices zootécnicos</a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <img src="{% static 'images/shopkeeper/balance.png' %}" alt="Prediction">
+          <div class="card-body">
+            <a href="{% url 'prediction' %}">Predição do peso</a>  
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <img src="{% static 'images/shopkeeper/veterinarydigital.png' %}" alt="Veterinary">
+          <div class="card-body">
+            <a href="{% url 'veterinary' %}">Assistêcnia tecnica</a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <img src="{% static 'images/shopkeeper/biometrics.png' %}" alt="Biometric">
+          <div class="card-body">
+            <a href="{% url 'biometric' %}">Reconhecimento digital</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
     <div class="cards">
       <div class="card">
         <img src="{% static 'images/shopkeeper/analytics.png' %}" alt="Índices">
@@ -96,7 +170,7 @@
 
       <div class="card">
         <img src="{% static 'images/shopkeeper/veterinarydigital.png' %}" alt="Veterinary">
-        <a href="{% url 'veterinary' %}">Veterinário virtual</a>
+        <a href="{% url 'veterinary' %}">Assistêcnia tecnica</a>
       </div>
 
       <div class="card">
@@ -118,10 +192,7 @@
         <img src="{% static 'images/shopkeeper/diagnosticdigital.png' %}" alt="Diagnostic">
         <a href="{% url 'diagnostic' %}">Diagnóstico digital</a>
       </div>
-    </div>
-  </section>
-
-
+    </div>-->
 
   {% endif %}
 
@@ -130,12 +201,14 @@
 
   {% else %}
 
+  <main class="client"></main>
+
   <section class="e-fidelity">
     <div class="text-area">
       <center>
-      <h2 style="font-size: 1.75rem;">Propósito da BodeTech</h2>
+      <h2 style="font-size: 1.75rem;">Propósito da Zootech</h2>
       <p style="font-size: 18px;">
-        A BodeTech é uma Startup que tem como missão integrar o pecuarista 
+        A Zootech é uma startup que tem como missão integrar o pecuarista 
         com tecnologias que auxiliem no acompanhamento do rebanho, garantindo
         uma maior simplicidade e eficiência nas atividades desenvolvidas. 
       </p>
@@ -164,8 +237,8 @@
         </div>
         <div class="card">
           <img src="{% static 'images/user-not-is-logged/icons/veterinary.png' %}" alt="Acompanhamento digital">
-          <h3>Veterinário virtual</h3>
-          <p>Acompanhamento veterinário digital será realizado por veterinários associados à plataforma.</p>
+          <h3>Assistência técnica</h3>
+          <p>A assistência técnica virtual será realizada por veterinários associados à plataforma.</p>
         </div>
       </div>
       <div class="line-2">
@@ -180,9 +253,9 @@
           <p>A avaliação clínica dos animais com papilomatose e outras doenças visuais poderá ser realizada através do algoritmo de diagnóstico.</p>
         </div>
         <div class="card">
-          <img src="{% static 'images/user-not-is-logged/icons/database.png' %}" alt="Banco de dados">
-          <h3>Banco de dados</h3>
-          <p>As informações acerca dos animais serão armazenadas no banco de dados e, desta forma,  é possível ter acesso às informações rapidamente..</p>
+          <img src="{% static 'images/user-not-is-logged/icons/manager.png' %}" alt="Banco de dados">
+          <h3>Gestão financeira</h3>
+          <p>Recursos de gestão financeira estarão disponíveis para que os pecuaristas possam gerenciar o seu negócio.</p>
         </div>
       </div>
     </div>
@@ -192,7 +265,7 @@
     <div class="text-area">
       <center>
       <h2  style="font-size: 1.75rem;">Nosso aplicativo para celular</h2>
-      <p>O aplicativo mobile da BodeTech é um projeto futuro! </p>
+      <p>O aplicativo mobile da Zootech é um projeto futuro! </p>
       <break></break>
       <p>Se interessou pelo nossa ideia e quer ser um investidor? Entre em contato <a href="https://wa.link/ube95j"> (74) 9 9905-4622</a>.</p>
     </div>
@@ -204,7 +277,7 @@
 
   <footer class="footer">
     <div class="text-area">
-      <img src="{% static 'images/user-not-is-logged/logo-alt_b.png' %}" alt="E-Fidelity">
+      <img src="{% static 'images/user-not-is-logged/logo-new.png' %}" style="width: 30%; height: auto;" alt="Logo">
       <p> </p>
       <span>&copy;Todos os direitos reservados.</span>
     </div>
@@ -230,7 +303,7 @@
         Login
       </a>
       <a href="{% url 'register' %}" class="register-button">
-        Cadastrar-se
+        Cadastr-se
       </a>
       {% endif %}
     </div>
