@@ -19,11 +19,11 @@ function showAlert(message) {
 
 //############### índices template ######################
 
-var buttons = document.querySelectorAll(".btn-group").length;
+var buttons = document.querySelectorAll(".btn-primary").length;
 
 for (var i = 0; i < buttons ; i++) {
-    document.querySelectorAll(".btn-group")[i].addEventListener("click", function() {
-        showAlert("Funcionalidade em desenvolvimento.", 'danger')
+    document.querySelectorAll(".btn-primary")[i].addEventListener("click", function() {
+        showAlert("Valor registrado", 'danger')
     });
 }
 

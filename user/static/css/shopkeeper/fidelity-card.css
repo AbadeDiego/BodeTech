@@ -4,13 +4,85 @@
 }
 
 .card-wrapper header {
-  display: flex;
   align-items: center;
   justify-content: left;
   
-  margin-left: calc(9.25rem - 3.5rem);
-  margin-top: calc(7.25rem - 3.5rem);
-  padding: 40px 34px;
+  margin-left: 3.5rem;
+  margin-bottom: 2.5rem;
+  margin-top: 1.25rem;
+  padding: 1px 2px;
+}
+
+.card-wrapper .chart {
+  justify-content: center;
+  margin-left: 8.5rem;
+
+}
+
+.card-wrapper button {
+  display:  inline-block;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  left: 37%;  
+  transform: translateX(-50%);
+  width: 24.3%;
+  
+  height: calc(2.75rem - 2px);
+
+  margin: 0.22rem auto 0.22rem auto;
+
+
+  font-size: 15px;
+  font-weight: bold;
+  color: rgb(5, 0, 65);
+  background-color: rgba(255, 255, 255, 0.753);
+  
+  box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.5);
+  
+  border: 2px solid rgb(66, 21, 0);
+  border-radius: 5px;
+
+  cursor: pointer;
+  transition: .2s;
+}
+
+.card-wrapper button:hover {
+  color: var(--white);
+  background-color: rgb(38, 96, 253);
+  border: 2px solid black;
+
+
+}
+
+@media screen and (max-width: 1024px) {
+  .card-wrapper{
+    padding: 0.25rem;
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+  .card-wrapper header {
+    padding: 0.25rem;
+  }
+
+  .card-wrapper button {
+    margin: 0.15rem auto 0.15rem auto;
+    left: 30%;  
+    width: 28.3%;
+    font-size: 11px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+
+  .card-wrapper button {
+    margin: 0.1rem auto 0.1rem auto;
+    left: 25%;  
+    width: 28.3%;
+    font-size: 9px;
+  }
 }
 
 /*
@@ -95,78 +167,3 @@
   outline-color: var(--text);
 }
 */
-.card-wrapper button {
-  display:  inline-block;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  left: 40%;  
-  transform: translateX(-50%);
-
-  width: calc(10.5rem - 2px);
-  height: calc(3.75rem - 2px);
-
-  margin: 0.25rem auto 0.625rem auto;
-
-
-  font-size: 17px;
-  font-weight: bold;
-  color: var(--white);
-  text-decoration: none;
-
-  background-color: var(--primary);
-
-  border: 2px solid var(--primary);
-  border-radius: 16px;
-
-  cursor: pointer;
-  transition: .2s;
-}
-
-.card-wrapper button:hover {
-  color: var(--primary);
-  background-color: transparent;
-  border: 2px solid var(--primary);
-
-
-}
-
-@media screen and (max-width: 1024px) {
-  .card-wrapper .input-group table td {
-    padding: 0.25rem;
-  }
-
-  .card-wrapper .input-group table td input {
-    width: 10rem;
-    height: 100%;
-
-    padding: 0.5rem;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .card-wrapper header {
-    padding: 0 5rem;
-  }
-
-  .card-wrapper .input-group table td input {
-    width: 6rem;
-    height: 100%;
-
-    padding: 0.5rem;
-
-    font-size: 0.75rem;
-  }
-}
-
-@media screen and (max-width: 425px) {
-  .card-wrapper header {
-    padding: 0 3rem;
-  }
-
-  .card-wrapper header a {
-    gap: 0.5rem;
-    padding: calc(0.75rem - 2px) calc(3rem - 24px);
-    font-size: 1rem;
-  }
-}
