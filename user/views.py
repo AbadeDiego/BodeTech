@@ -55,6 +55,9 @@ def register(request):
     return render(request, 'user/register.html', {'form': form, 'title':'registre'})
   
 ################ login forms###################################################
+from django.views.decorators.csrf import csrf_exempt, csrf_protect
+
+@csrf_exempt
 def Login(request):
     if request.method == 'POST':
   
