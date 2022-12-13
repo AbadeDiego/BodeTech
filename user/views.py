@@ -97,25 +97,22 @@ class Indices(View):
         return render(request, 'user/indices.html', self.context)
 
 @csrf_exempt
-class Home(View):
-    context = {}
-
-    def get(self,request):
+def Home(request):
+    if request.method == 'GET':
         forml = PersonDetailForm()
-        self.context['forml'] = forml
-        self.context['detail'] = PersonDetail.objects.all()
-        return render(request,'user/home.html',self.context)
+        detail = PersonDetail.objects.all()
+        return render(request,'user/home.html', {'forml':forml, 'detail':detail})
 
-    def post(self,request):
+    if request.method == 'POST':
         forml = PersonDetailForm(request.POST)
         if forml.is_valid():
             forml.save()
 
-        self.context['forml'] = forml
-        self.context['detail'] = PersonDetail.objects.filter(user= request.user)
+        forml = forml
+        detail= PersonDetail.objects.filter(user= request.user)
         request.user.new_spending.add(forml.save()) 
 
-        return render(request, 'user/home.html', self.context)
+        return render(request, 'user/home.html', {'forml':forml, 'detail':detail})
 
 
     #https://vinaykumarmaurya30.medium.com/saving-data-using-django-model-form-7ec9d8471ccf
