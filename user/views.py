@@ -1,3 +1,4 @@
+from django.views.decorators.csrf import csrf_exempt, csrf_protect
 from django.http import HttpResponseBadRequest, HttpResponseRedirect, Http404
 from django.urls import reverse
 from django.shortcuts import render, redirect
@@ -56,7 +57,6 @@ def register(request):
     return render(request, 'user/register.html', {'form': form, 'title':'registre'})
   
 ################ login forms###################################################
-from django.views.decorators.csrf import csrf_exempt, csrf_protect
 
 @csrf_exempt
 def Login(request):
