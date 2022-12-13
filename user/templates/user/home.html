@@ -1,0 +1,90 @@
+{% extends "user/index.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block start %}
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<h2 style="font-size: 1.55rem; font-weight: 400; margin-left: 42%; margin-top: 1.9%;">Resgistro de parição</h2>
+<div style="width:80%; margin-left: 30%; margin-top: 1.9%;">
+    <div class="row">
+        <div class="container">
+        {% load crispy_forms_tags %}    
+    <form id="form" method="post">
+        {%csrf_token%}
+        {%if forml%}
+
+        <div class="form-group mx-sm-3 mb-1">
+            {%for field in forml%}
+            <div class="input-group mb" class="input-group-append">
+                <div class="col-md-5 p-0" aria-label="Amount (to the nearest dollar)">{{field|as_crispy_field}}</div>
+            </div>
+       
+            {%endfor%}
+
+            <div class="container" style="margin-left: 12%;">
+                <button type="reset" class="btn btn-secondary" class="glyphicon glyphicon-check">Apagar</button>
+                <button type="submit" id="submit_button" class="btn btn-primary" class="glyphicon glyphicon-check">Salvar</button>
+            </div>
+        </div>
+        {%endif%}
+
+    </form>
+        </div>
+    </div>
+</div>
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<script>
+
+let button = document.getElementById("submit_button")
+let form = document.getElementById("form")
+
+button.addEventListener("click", (e) => {
+    e.preventDefault();
+    swal({
+        title:"Registro Salvo!",
+        text:"Navegue até dados de natalidade para visualizar.",
+        icon:"success", 
+        button:"Ok" }
+    ).then( () => {
+      form.submit()
+    })
+})
+
+/*
+let form = document.getElementById("form");
+form.addEventListener("submit", (e) => {
+    valid = form.checkValidity();
+    if(valid) {
+        e.preventDefault();
+        swal({
+	    title:"Registro Salvo!",
+	    text:"Navegue até dados de natalidade para visualizar.",
+	    icon:"success", 
+	    button:"Ok" }
+        );
+        return true;
+    }
+    else {
+        return false;
+    }
+});
+
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    swal({
+	title:"Registro Salvo!",
+	text:"Navegue até dados de natalida]de para visualizar.",
+	icon:"success",
+	button:"Ok"
+    });
+    location.reload();
+});
+
+*/  
+</script>
+
+
+{% endblock start %}

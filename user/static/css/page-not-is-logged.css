@@ -215,7 +215,7 @@
 /* Footer */
 
 .footer {
-  padding: 5.5rem 8rem 4.5rem;
+  padding: 2.5rem 3rem 2.5rem;
 
   background: linear-gradient(183.41deg, #ac9071 -8.57%, #b97040 82.96%);
 }
@@ -226,7 +226,7 @@
   line-height: 1.75rem;
   color: var(--white);
 
-  max-width: 20rem;
+  max-width: 10rem;
   margin: 2rem 0;
 }
 

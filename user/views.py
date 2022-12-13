@@ -1,3 +1,5 @@
+from django.http import HttpResponseBadRequest, HttpResponseRedirect, Http404
+from django.urls import reverse
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth import authenticate, login
@@ -14,7 +16,11 @@ import os
 import requests
 import time
 from django.http import JsonResponse
+from .models import *
 
+from django.shortcuts import render
+from django.views.generic import View
+from .forms import PersonDetailForm
 
 #from tabulate import tabulate
 
@@ -67,40 +73,48 @@ def Login(request):
     return render(request, 'user/login.html', {'form':form, 'title':'log in'})
 
 
-########## prediction ######################################
-
-def prediction(request):
-	
-	return render(request, 'user/prediction.html', {'title':'prediction'})
-
-########## biometric ######################################
-
-def biometric(request):
-	
-	return render(request, 'user/biometric.html', {'title':'biometric'})
-
-
-########### diagnostic #####################################
-
-def diagnostic(request):
-	
-	return render(request, 'user/diagnostic.html', {'title':'diagnostic'})
-
-########### database #######################################
-
-def database(request):
-	
-	return render(request, 'user/database.html', {'title':'database'})
-
-########### Veterinary #####################################
-
-def veterinary(request):
-	
-	return render(request, 'user/veterinary.html', {'title':'veterinary'})
-
 ########### Índices ##########################################
 
-def indices(request):
-	
-	return render(request, 'user/indices.html', {'title':'indices'})
+class Indices(View):
+    context = {}
 
+    def get(self,request):
+        forml = PersonDetailForm()
+        self.context['forml'] = forml 
+        self.context['detail'] = PersonDetail.objects.filter(user= request.user)
+        return render(request,'user/indices.html',self.context)
+
+    def post(self,request):
+        forml = PersonDetailForm(request.POST)
+        if forml.is_valid():
+            forml.save()
+
+        self.context['forml'] = forml
+        self.context['detail'] = PersonDetail.objects.filter(user= request.user)
+        return render(request, 'user/indices.html', self.context)
+
+
+class Home(View):
+    context = {}
+
+    def get(self,request):
+        forml = PersonDetailForm()
+        self.context['forml'] = forml
+        self.context['detail'] = PersonDetail.objects.all()
+        return render(request,'user/home.html',self.context)
+
+    def post(self,request):
+        forml = PersonDetailForm(request.POST)
+        if forml.is_valid():
+            forml.save()
+
+        self.context['forml'] = forml
+        self.context['detail'] = PersonDetail.objects.filter(user= request.user)
+        request.user.new_spending.add(forml.save()) 
+
+        return render(request, 'user/home.html', self.context)
+
+
+    #https://vinaykumarmaurya30.medium.com/saving-data-using-django-model-form-7ec9d8471ccf
+    #https://github.com/CalebCurry/django-modelform/blob/main/djangouploads/views.py
+    #http://www.learningaboutelectronics.com/Articles/How-to-save-data-from-a-form-to-a-database-table-in-Django.php

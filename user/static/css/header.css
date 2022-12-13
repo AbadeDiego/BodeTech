@@ -5,8 +5,8 @@
   align-items: center;
   justify-content: space-between;
   background-color: #a17c66; /*linear-gradient(147deg, #160901 0%, #291305 100%); linear-gradient(147deg, #5f3216 0%, #774120 100%); */
-  background-image:  linear-gradient(183.41deg, #ac9071 -1.57%, #b97040 32.96%);
-  padding: 3.5rem 8rem;
+  background-image:  linear-gradient(183.41deg, #774d1e -1.57%, #633618 32.96%);
+  padding: 2.5rem 5rem;
 }
 
 /* ------------------------ Header Buttons --------------------------*/
