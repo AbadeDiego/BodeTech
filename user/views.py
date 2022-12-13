@@ -1,4 +1,3 @@
-from django.views.decorators.csrf import csrf_exempt, csrf_protect
 from django.http import HttpResponseBadRequest, HttpResponseRedirect, Http404
 from django.urls import reverse
 from django.shortcuts import render, redirect
@@ -22,6 +21,7 @@ from .models import *
 from django.shortcuts import render
 from django.views.generic import View
 from .forms import PersonDetailForm
+from django.views.decorators.csrf import csrf_exempt
 
 #from tabulate import tabulate
 
