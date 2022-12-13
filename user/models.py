@@ -22,7 +22,7 @@ class PersonDetail(models.Model):
     matriz = models.CharField(max_length=20, help_text = "Informe o nome da matriz")
     reprodutor = models.CharField(max_length=20, help_text = "Informe o nome do reprodutor")
     parto = models.CharField(max_length=10,choices=Parto)
-    data_de_nascimento = models.DateField(verbose_name = "Data de parição", help_text = "Por favor use o formato: <em>DD-MM-AAAA</em>.")
+    data_de_nascimento = models.DateField(verbose_name = "Data de parição", help_text = "Por favor use o formato: <em>DD/MM/AAAA</em>.")
     habilidade_materna = models.CharField(max_length=10,choices=Habilidade)
     created_at = models.DateTimeField(auto_now=True)
     updated_at = models.DateTimeField(auto_now_add=True)
