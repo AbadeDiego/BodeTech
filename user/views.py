@@ -96,7 +96,7 @@ class Indices(View):
         self.context['detail'] = PersonDetail.objects.filter(user= request.user)
         return render(request, 'user/indices.html', self.context)
 
-
+@csrf_exempt
 class Home(View):
     context = {}
 
