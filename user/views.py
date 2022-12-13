@@ -32,6 +32,7 @@ def index(request):
 	return render(request, 'user/index.html', {'title':'home'})
 
 ########### register here #####################################
+@csrf_exempt
 def register(request):
     if request.method == 'POST':
         form = UserRegisterForm(request.POST)
